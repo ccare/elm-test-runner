@@ -1,0 +1,2 @@
+# Don't change line endings when committing or fetching
+* core.autocrlf false
