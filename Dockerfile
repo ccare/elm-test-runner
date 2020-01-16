@@ -19,6 +19,10 @@ RUN apk --update --no-cache add bash \
 # be consistent, but installing Elm via npm failed for me.
 RUN npm install --unsafe-perm -g elm-test@0.19.1
 
+RUN mkdir /opt/test-runner/elm-home
+ENV HOME="/opt/test-runner/elm-home"
+COPY ./.elm /opt/test-runner/elm-home
+
 COPY ./run.sh /opt/test-runner/bin
 COPY ./process_results.py /opt/test-runner/bin
 
